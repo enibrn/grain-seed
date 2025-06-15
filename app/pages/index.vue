@@ -15,9 +15,11 @@
 
     <!-- Main Content -->
     <main class="main">
-      <div class="container">
-        <!-- Hero Section -->
+      <div class="container">        <!-- Hero Section -->
         <section class="hero">
+          <div class="hero-logo">
+            <GrainLogo :size="150" />
+          </div>
           <h2 class="hero-title">Welcome to Grain Seed</h2>
           <p class="hero-description">
             A modern, elegant interface designed for optimal readability and user experience. 
@@ -85,6 +87,7 @@
 </template>
 
 <script setup>
+
 // Page metadata
 useSeoMeta({
   title: 'Grain Seed - Modern Interface Design',
@@ -97,6 +100,12 @@ useSeoMeta({
 .hero {
   text-align: center;
   padding: 4rem 0;
+}
+
+.hero-logo {
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 .hero-title {
@@ -201,6 +210,11 @@ useSeoMeta({
 @media (max-width: 768px) {
   .hero-title {
     font-size: 2.5rem;
+  }
+  
+  .hero-logo :deep(svg) {
+    width: 120px;
+    height: 120px;
   }
   
   .cards-grid {
